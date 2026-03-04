@@ -11,15 +11,22 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Navbar from './components/Navbar'
 import ProductDetails from './components/ProductDetails'
+import {createContext} from 'react'
+import Reducer from './hooks/Reducer'
 
 
+export const userContext=createContext()
 const App = () => {
+  const name='xyz'
   return (
-    <BrowserRouter>
+
+    
+  <>
     
     <Navbar />
-    
+    <userContext.Provider value={{name}}>
     <Routes>
+      
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/services" element={<Services/>}/>
@@ -27,24 +34,29 @@ const App = () => {
         <Route path="/contact" element={<Contact/>}/>
         
     </Routes>
-    {/*<div>APP</div>*/}
-    </BrowserRouter>
+    <Reducer />
+    </userContext.Provider>
+   
+    
+  </>
+  
+
+   
+    
     /*
-    <>
+    <div>APP</div>
     <h1>Details</h1>
     <User name="harshitha" age={21} skills={["HTML","CSS","JS","JAVA"]}/>
     <hr/>
+    <br></br>
+    <hr/>
+    <State/>
    <Conditional/>
     <hr/>
     <State />
     <hr />
     <Form/>
-    <hr/> //here hr is a horizontal rule tag that creates the horizontal line between paragraphs//
-    
-    </>
-     */
-    
-    
+    <hr/>*/ /*here hr is a horizontal rule tag that creates the horizontal line between paragraphs*/
   )
 }
 

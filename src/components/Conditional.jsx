@@ -23,7 +23,7 @@ const Conditional = () => {
     )*/
 
     const [isVisible,setIsVisible]=useState(true)
-    retn (
+    return (
         <div>
             <button onClick={()=>setIsVisible(!isVisible)}>Toggle</button>
             {isVisible && <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas corporis consequatur, quidem a suscipit obcaecati quos repellendus, nam possimus explicabo ratione, nesciunt odio placeat nobis maxime at excepturi eius. Quae.</p>}
